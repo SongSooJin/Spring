@@ -8,8 +8,10 @@ public class Hello {
 	public void say() {
 		// 핵심로직
 		System.out.println("Hello~!!!");
-		// 클라이언트가 프록시 객체를 사용하는 경우
-		// 프록시 객체가 가진 후 처리 로직이 타겟 메소드 뒤에서 기동한다.
-		// System.out.println("====Around After Advice====");
+		
 	}
+	
+	// 클라이언트가 프록시 객체를 사용하는 경우
+	// 프록시 객체가 가진 후 처리 로직이 타겟 메소드 뒤에서 기동한다.
+	// System.out.println("====Around After Advice====");
 }

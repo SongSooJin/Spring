@@ -4,8 +4,8 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 @Data
+//@Accessors(chain = true) : setter 메소드가 this를 리턴하여 메소드 체이닝패턴을 사용할 수 있다.
 @Accessors(chain = true)
-// @Accessors(chain = true) : setter 메소드가 this를 리턴하여 메소드 체이닝패턴을 사용할 수 있다.
 public class Emp {
 	private int empno;
 	private String ename;

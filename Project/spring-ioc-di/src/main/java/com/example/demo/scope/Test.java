@@ -32,6 +32,7 @@ public class Test {
 	      System.out.println(car3 == car4); // false
 	      
 	      // 개발자가 직접만든 객체를 스프링은 인식하지 못한다.
+	      // 따라서 DI 서비스를 제공하지 못한다.
 //	      Test test = new Test();
 //	      System.out.println(test.cars.size());
 	      

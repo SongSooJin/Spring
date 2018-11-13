@@ -7,8 +7,7 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
-// @Order(2) : 자료형이 같은 객체 다수가 빈 컨테이너에 존재할 때,
-// 처리순서를 지정한다. 낮은 숫자가 먼저 처리된다.
+
 @Component("car2")
 @Scope("prototype")
 //@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE) 위의 코드(@Scope("prototype"))와 같은 의미

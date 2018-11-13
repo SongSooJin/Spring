@@ -15,18 +15,18 @@ public class Test { // Client
 	private List<Employee> emps;
 	
 	public static void main(String[] args) {
-//		Employee worker = new Programmer(); // 객체생성
-//		
-//		TeamManager manager = new TeamManager(); // 객체생성
-//		
-//		manager.setWorker(worker); // 관계설정(DI)
-//		manager.order();
-//		
-//		manager.setWorker(new Designer()); // 객체생성
-//		manager.order();
-//		
-//		manager.setWorker(worker);  // 관계설정(DI)
-//		manager.order();
+		Employee worker = new Programmer(); // 객체생성
+		
+		TeamManager manager = new TeamManager(); // 객체생성
+		
+		manager.setWorker(worker); // 관계설정(DI)
+		manager.order();
+		
+		manager.setWorker(new Designer()); // 객체생성
+		manager.order();
+		
+		manager.setWorker(worker);  // 관계설정(DI)
+		manager.order();
 		
 //		A객체가 의존하는 객체가 B, B2, B3 식으로 자주 변경될 때
 //		클래스 내 코드변경을 막고자 객체생성, 관계설정 관련직업을

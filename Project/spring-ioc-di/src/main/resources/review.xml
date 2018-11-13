@@ -12,7 +12,7 @@
 	
 	<bean id="manager1" class="com.example.demo.review.xml.TeamManager">
 		<!-- setWorker() 메소드를 사용해서 주입된다 -->
-		<property name="worker" ref="programmer"></property>
+		<!-- <property name="worker" ref="programmer"></property> -->
     </bean>
     
     <bean id="manager2" class="com.example.demo.review.xml.TeamManager" p:worker-ref="designer">

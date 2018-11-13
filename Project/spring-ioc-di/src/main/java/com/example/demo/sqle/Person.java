@@ -31,7 +31,7 @@ public class Person {
 	private int carDoors;
 	
 	// Run As > Run Configuration > VM arguments > -Duser.region=KR
-	// java -jar 빌드결과 .jar -Duser.region=KR
+	// java -jar 빌드된파일 .jar -Duser.region=KR
 	@Value("#{systemProperties['user.region'] == null ? 'US' : systemProperties['user.region']}")
 	private String defaultLocale;
 }

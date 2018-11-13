@@ -52,8 +52,8 @@ public class EmpDaoImpl implements EmpDao {
 		if (emp.getEmpno() == 0) {
 			// 파라미터로 넘어오는 건 키값이 없음
 			// 도메인 클래스의 멤버변수 이름과 테이블의 칼럼명이 일치하는 경우
-			// 멤버변수를 칼럼명으로 사용하여 자동으로 SQL insert 쿼리문을 작성합니다.
-			// jdbcInsert 객체를 사용할 때 따로 SQL 쿼리문을 알려줄 필요가 없습니다.
+			// 멤버변수를 칼럼명으로 사용하여 자동으로 SQL insert 쿼리문을 작성하다.
+			// jdbcInsert 객체를 사용할 때 따로 SQL 쿼리문을 알려줄 필요가 없다.
 			SqlParameterSource param = new BeanPropertySqlParameterSource(emp);
 
 			// 자바에서 숫자를 취급하는 Number객체 안에 디비가 제너레이트한 키 값이

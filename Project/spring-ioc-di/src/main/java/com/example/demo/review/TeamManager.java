@@ -26,7 +26,7 @@ public class TeamManager {
 	private Employee worker;
 	
 	
-	public void orer() {
+	public void order() {
 		System.out.println("TeamManager가 : " + worker.getClass().getSimpleName() + "에게 일을 시킨다." );
 		worker.work();
 	}

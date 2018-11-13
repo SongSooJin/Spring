@@ -38,6 +38,7 @@ public class EmpRestController {
 
 	// {id} : URI 문자열 부분은 가변적이어도 연동이 된다.
 	// {} : 가변적임
+	// @PathVariable("id") : {id} 부분에 값을 변수에 할당한다.
 	@RequestMapping(value = "/emps/{id}", method = RequestMethod.GET)
 	public Object getOne(@PathVariable("id") int empno) {
 		Emp emp = empService.findOne(empno);
@@ -47,6 +48,8 @@ public class EmpRestController {
 	// 2. POST ==> Insert 쿼리
 	// @RequestBody : 클라이언트가 HTML Form이 아닌 JSON포맷의 문자열로 데이터를
 	// 보낼때 이를 스프링이 처리하도록 요청한다.
+	// 클라이언트는 추가적으로 Header 부분에 다음 설정을 해야 한다.
+	// Content-Type: application/json
 	@RequestMapping(value = "/emps", method = RequestMethod.POST)
 	public Object postOne(@RequestBody Map<String, Object> map) {
 		// 클라이언트가 보내는 파라미터들이 스프인에 의해서 map 객체에 추가된다.
@@ -82,5 +85,6 @@ public class EmpRestController {
 		// 삭제된 로우는 존재하지 않으므로 삭제작업이 성공했다는 의미만 전달한다.
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
+	
+	// 컨트롤러의 메소드가 정상작동 하는지 Postman을 사용해서 테스트 해 보자.
 }

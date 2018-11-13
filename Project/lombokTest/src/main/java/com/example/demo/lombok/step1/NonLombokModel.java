@@ -1,5 +1,8 @@
 package com.example.demo.lombok.step1;
 
+//@Data :
+//@Getter, @Setter, @RequiredArgsConstructor,
+//@ToString, @EqualsAndHashCode 애노테이션들을 붙이는 대신 사용한다.
 public class NonLombokModel {
 	private String name;
 	private int age;

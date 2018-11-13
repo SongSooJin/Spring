@@ -65,13 +65,15 @@ public class EmpDaoImpl implements EmpDao {
 		String sql = "delete EMP9 where empno=?";
 		return jdbcTemplate.update(sql, empno);
 	}
-
+	
+	// 메소드를 선택하는 방법
 	// 1. 수정쿼리/조회쿼리 구분
 	// 2. 리턴자료형에 맞는 메소드인가
 	// 3. 파라미터를 몇개 줄것인가
 	@Override
 	public List<Emp> findAll() {
 		String sql = "select empno, ename, job, sal from EMP9 order by empno asc";
+		
 		// 결과값이 여러개이면 query 메소드 사용 
 		return jdbcTemplate.query(sql, rowMapper);
 	}

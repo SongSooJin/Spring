@@ -36,7 +36,9 @@ public class EmpDaoImplTest {
 		emp.setEname("홍길동");
 		emp.setJob("도둑");
 		emp.setSal(999);
+		
 		int affected = empDao.insert(emp);
+		
 		System.out.println("affected = " + affected);
 	}
 

@@ -28,5 +28,10 @@ public class TeamManager {
 		System.out.println("TeamManager가 " + worker.getClass().getSimpleName() + "에게 일을 시킨다..");
 		worker.work();
 	}
+	
+	//	@Required
+	public void setWorker(Employee worker) {
+		this.worker = worker;
+	}
 }
 

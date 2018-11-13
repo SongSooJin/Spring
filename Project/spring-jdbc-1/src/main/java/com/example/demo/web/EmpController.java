@@ -22,7 +22,6 @@ public class EmpController {
 	@RequestMapping(value = "/emps", method = RequestMethod.GET)
 	public String getAll(Model model) {
 		// DAO에게 데이터를 구해달라고 요청한다.
-		
 		List<Emp> emps = empDao.findAll();
 		
 		// Model : 스프링이 만든 DTO 클래스 
