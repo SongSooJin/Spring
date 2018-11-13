@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="designer" class="com.example.demo.review.xml.Designer"></bean>
+	
+	<bean id="programmer" class="com.example.demo.review.xml.Programmer"></bean>
+	
+	<bean id="manager1" class="com.example.demo.review.xml.TeamManager">
+		<!-- setWorker() 메소드를 사용해서 주입된다 -->
+		<property name="worker" ref="programmer"></property>
+    </bean>
+    
+    <bean id="manager2" class="com.example.demo.review.xml.TeamManager" p:worker-ref="designer">
+	
+		
+		<!-- <property name="worker" ref="designer"></property> -->
+    </bean>
+    
+    <context:component-scan base-package="com.example.demo.review.xml"/>
+
+</beans>

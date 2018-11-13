@@ -1,0 +1,13 @@
+STS - Window - preference - encoding - 워크스페이스 / CSS / HTML / JSP -> UTF 8 encoding 바꿈 
+
+톰캣 8 설치 
+
+server - runtime enviornments - add - Apache - Apache Tocat 8.0 - next - 디렉토리 (톰캣 깔려있는 파일 위치 선택)
+-왼쪽하단 서버 add클릭 
+
+
+-----------------------------------
+
+
+스프링 프레임워크 프로젝트를
+==> 베리굳 프레임워크로 변경해야 한다.

@@ -1,0 +1,13 @@
+20181108(2. Spring AOP.pdf)
+*AOP
+
+*SRP : 단일 책임 원칙 (Single responsibility principle)
+한 클래스는 하나의 책임만 가져야 한다.
+(ex-자동차 : 바퀴는 바퀴 역할만, 엔진은 엔진 역할만 할 수 있도록 해야한다.)
+
+*com.example.demo.proxy.step2의 예제는 중복 로직 및
+test.java 파일 내의 로직을 매일 변경해야하는 번거로움을 없엔 예제이다.
+변화 공간을 환경설정으로 빼낸다.
+proxy.java파일 생성 후 test.java의 불필요한(반복) 코드가 삭제 된다.
+
+*

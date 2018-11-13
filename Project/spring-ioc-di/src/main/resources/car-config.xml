@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	//	CarMaker maker = new KiaMaker(); //객체 생성
+	//	CarMaker maker = new HyundaiMaker(); //객체 생성
+		
+	//	OrderManager manager = new OrderManager();
+	//	manager.setMaker(maker); // 관계 설정
+	//	manager.order(); // 로직 호출
+ -->
+ 
+ 	<bean id="KiaMaker" class= "com.example.demo.ioc.step5.KiaMaker"></bean>
+ 	<bean id="HyundaiMaker" class= "com.example.demo.ioc.step5.HyundaiMaker"></bean>
+ 	
+ 	<bean id="manager" class= "com.example.demo.ioc.step5.OrderManager">
+ 		<constructor-arg ref="KiaMaker"></constructor-arg>
+ 	
+ 	<!-- 멤버변수를  name 값으로 설정하지만 setMaker 메소드를 통해서 주입한다.-->
+ 	<!-- <property name="maker" ref="HyundaiMaker"></property>-->
+ 	</bean>
+ 
+</beans>
