@@ -73,6 +73,17 @@
       select * from emp order by empno asc limit #{skip}, #{limit}
     </select>
     
+    <select id="findPageSizeUsingBind" resultMap="empRowMapper">
+      <bind name="skip" value="@com.example.demo.util.MyUtil@pageToSkip(page,size)" />
+      <![CDATA[ 
+     	select * from emp
+     	order by empno asc
+     	limit #{skip}, #{size}
+      ]]>
+    </select>
+    
+    
+    
     <!-- public List<Emp> search(Map<String, String> map) -->
     <select id="search" resultMap="empRowMapper">
      <![CDATA[ 

@@ -12,7 +12,7 @@ import com.example.demo.domain.Emp;
 
 // 인터페이스의 구현체 역할을 수행할 수 있는 객체(일종의 프록시)를
 // 마이바티스가 빈 컨테이너에 등록합니다.
-@Mapper
+//@Mapper
 public interface EmpDao {
    // 리턴자료형 int: 작업결과로 영향받은 row의 개수를 의미합니다.
    public int insert(Emp emp);
@@ -48,6 +48,8 @@ public interface EmpDao {
     */
    public List<Emp> findPageSize(int page, int size);
 
+   // bind 사용 예제 
+   public List<Emp> findPageSizeUsingBind(int page, int size);
    
    // ename,job,sal 칼럼으로 검색하는 기능의 메소드를 제공하고싶다.
    // select * from emp where ename like '%길동%'

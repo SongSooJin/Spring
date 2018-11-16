@@ -90,9 +90,21 @@ public class EmpDaoImpl implements EmpDao {
 		return session.selectList("com.example.demo.dao.EmpDao.findPageSize", map);
 	}
 
+	// bind 사용 예제 
+	@Override
+	public List<Emp> findPageSizeUsingBind(int page, int size) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("page", page);
+		map.put("size", size); // 개수
+		
+		return session.selectList("com.example.demo.dao.EmpDao.findPageSizeUsingBind", map);
+	}
+	
 	@Override
 	public List<Emp> search(Map<String, String> map) {
 		return session.selectList("com.example.demo.dao.EmpDao.search", map);
 	}
+
+	
 
 }

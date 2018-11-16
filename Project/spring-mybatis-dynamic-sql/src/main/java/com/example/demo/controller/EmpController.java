@@ -21,31 +21,28 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("/emps")
 public class EmpController {
-	
 	@Autowired
 	private EmpDao empDao;
 
+	// http://localhost:8080/emps
 	@GetMapping
-  	public String getSearchView() {
+	public String getSearchView() {
 		return "search";
-   }
-   
+	}
+	
 	@PostMapping
 //	@ResponseBody
-	public Object postOne(@RequestParam Map<String, String> map, Model model) {
+	public Object postOne(
+			@RequestParam Map<String, String> map, Model model) {
 		log.debug(map.toString());
 		
-		System.out.println(map);
-		System.out.println(map.get("job") == null); // false
-		System.out.println(map.get("job") instanceof String); // true
-		
 		List<Emp> emps = empDao.search(map);
-		model.addAttribute("emps", emps);					
+		model.addAttribute("emps", emps);
 		
 		return "search";
 		
+//		System.out.println(map.get("job") == null); // false
+//		System.out.println(map.get("job") instanceof String); // true
 //		return map;
 	}
 }
-
-

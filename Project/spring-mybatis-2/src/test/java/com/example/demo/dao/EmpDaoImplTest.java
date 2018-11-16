@@ -77,7 +77,13 @@ public class EmpDaoImplTest {
 	    emps.forEach(System.out::println);
 	}
 	
-	
+	@Test
+	public void findPageSizeUsingBind() {
+		int page = 2;
+		int size = 10;
+		List<Emp> emps = dao.findPageSizeUsingBind(page, size);
+	    emps.forEach(System.out::println);
+	}
 }
 
 
