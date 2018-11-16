@@ -92,6 +92,19 @@ public class EmpDaoImpl implements EmpDao {
 
 	@Override
 	public List<Emp> search(Map<String, String> map) {
+		/*
+		 * 1. 빈 문자열을 null로 바꾼다.
+		 * 2. 매퍼 xml에서 if 조건에 비교시 빈 문자열로 테스트 한다.
+		 * 
+		 */
+		
+		// #1
+		map.forEach((key, value) -> {
+			if("".equals(value)) {
+				map.put(key, null);
+			}
+		});
+		
 		return session.selectList("com.example.demo.dao.EmpDao.search", map);
 	}
 
