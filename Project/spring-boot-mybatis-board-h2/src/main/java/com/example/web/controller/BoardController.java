@@ -37,7 +37,7 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView("board_list");
 		// 게시글 데이터
 		mav.addObject("boards", boardMapper.selectByLimit(page, size));
-		// 페이징 처리와 관련된 데이터 
+		// 페이징 처리와 관련된 데이터
 		mav.addObject("pager", new Pager(page, size, bsize, boardMapper.count()));
 		return mav;
 	}
@@ -50,7 +50,7 @@ public class BoardController {
 		return mav;
 	}
 	
-	@GetMapping("/write") // 작성화면
+	@GetMapping("/write")
 	public String getInsertView(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		if (user == null) {
@@ -60,7 +60,7 @@ public class BoardController {
 		return "board_write";
 	}
 	
-	@PostMapping("/write") // 작성에 쓰일 데이터를 디비에 넣어줘 
+	@PostMapping("/write")
 	public String postInsert(Board board, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		

@@ -46,8 +46,7 @@
 			</tbody>
 		</table>
 		
-		<pre>${pager}</pre>
-		
+		<pre>${pager }</pre>
 		
 		<div class="row">
 			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -58,17 +57,15 @@
 					</c:if>
 					<c:if test="${pager.rows > 0 }">
 						<c:set var="common" value="size=${pager.size }&bsize=${pager.bsize }" />
-						<!-- 이전 블락 처리  -->
+						<!-- 이전 블럭 -->
 						<c:if test="${pager.bspage > pager.bsize }">
 							<c:set var="home" value="page=1&${common }" />
 							<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
 							<li><a href="${target }?${home }">Home</a></li>
 							<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
 						</c:if>
-						
-						<!-- 페이비 번호 (pno) -->
+						<!-- 페이지번호(pno) -->
 						<c:forEach var="pno" begin="${pager.bspage }" end="${pager.bepage }">
-							<!-- 이후 블락 처리  -->
 							<c:if test="${pno==pager.page }">
 								<li class="active"><a href="#">${pno }</a></li>
 							</c:if>
@@ -79,6 +76,7 @@
 								</c:if>
 							</c:if>
 						</c:forEach>
+						<!-- 이후 블럭 -->
 						<c:if test="${pager.bepage < pager.pages }">
 							<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
 							<c:set var="last" value="page=${pager.pages }&${common }" />

@@ -32,7 +32,6 @@
 		</encoder>
 	</appender>
 	
-	
 	<logger name="jdbc" level="OFF" />
 	<logger name="jdbc.sqlonly" level="DEBUG" additivity="false">
 		<appender-ref ref="STDOUT" />
@@ -50,7 +49,7 @@
 	<logger name="org.quartz.core" level="INFO"/>
 	<logger name="org.h2.server.web" level="INFO"/>
 
-	<!-- 프로젝트 전역적으로 적용하는 로깅 환경설정  -->
+	<!-- 프로젝트 전역적으로 적용하는 로깅 환경설정 -->
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE" />
