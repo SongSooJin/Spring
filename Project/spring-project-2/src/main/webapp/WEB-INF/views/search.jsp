@@ -18,13 +18,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 <style type="text/css">
-	
-#wrap {
-	margin:0 auto;
-	width:1200px;
-}
+.container {
 
-#header h1 {
+}
+.content1 h1 {
 	margin:100px;
 	width:150px;
 	height:100px;
@@ -34,11 +31,11 @@
 	font-weight:bold;
 }
 
-#header h1 a {
+.content1 h1 a {
 		color:black;
 }
 
-#header h1 a:hover {
+.content1 h1 a:hover {
 	text-decoration:none;
 	color:navy;
 }
@@ -73,12 +70,12 @@
 	color:navy;
 }
 
-#content {
+.content2 {
 	text-align:center;
-	
+	height:650px;
 }
 
-#content ul li { 
+.content2 ul li { 
 	display:inline;                          
   font-size:20px;                 
   padding:0 10px;
@@ -86,13 +83,12 @@
 	margin:100px;
 }
 
-#footer {
+.footer {
 	background-color:#ff88a7;
-	position: relative;
+	position:relative;
 	width:100%;
 	display: flex;
 	text-align: left;
-	margin:50px 0 0 0;
 	
 }
 
@@ -115,8 +111,8 @@
 </style>
 </head>
 <body>
-	<div id="wrap">
-    <div id="header">
+	<div class="container">
+		<div class="content1">
 			<h1><a href="#">로고 </a></h1>
 			<form class="input" action="" method="post">
 				<input type="text" name="product_name" style="text-align:center; width:500px; height:50px;"              
@@ -135,11 +131,9 @@
 					</a>
 				</div>
 			</form>
-    </div>
-		
+		</div>
 		<hr>
-		
-    <div id="content">
+		<div class="content2">
 			<p><h2>${conditions }</h2></p>
 			<br><br>
 					<c:forEach var="e" items="${products}">
@@ -148,14 +142,9 @@
 							<li>Price: ${e.product_price}</li>
 						</ul>
 					</c:forEach>
-					
-					<img src="../image/ho.jpg" alt="">
-					
-					
-			
-    </div>
+		</div>
 		
-    <div id="footer">
+		<div class="footer">
 			<div class="footer1">
 				<ul>
 					<li>고객 센터  </li>
@@ -177,10 +166,9 @@
 					<li>전화번호 : 02-3216-0000 </li>
 				</ul>
 			</div>
-    </div>
+		</div>
 		
-  </div>
-	
 		
-		</body>
+	</div>
+</body>
 </html>

@@ -18,10 +18,8 @@ import com.example.demo.domain.Product;
 @Controller
 @RequestMapping("/products")
 public class ProductController<Vo> {
-	private static final Class<Product> product_name = null;
 	@Autowired
 	private ProductDao productDao;
-	private Product product;
 	
 	@GetMapping
 	public String getSearchView() {
@@ -45,30 +43,19 @@ public class ProductController<Vo> {
 		// 예: {ename=길동, job=null, salMin=null, salMax=null}
 		
 		model.addAttribute("conditions", searchConditionToHtml(map));
-		//model.addAttribute("conditions1", searchConditionToHtml1(map));
 		
 		return "search";
 	}
-
 
 	private String searchConditionToHtml(Map<String, String> map) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("검색조건: ");
 		if (map.get("product_name") != null) {
-			sb.append("<mark> "+ "'" + map.get("product_name") +"'" + "에 대한 "+ productDao.count()+"건 검색결과</mark> ");	
+			sb.append("<mark> "+ "'" + map.get("product_name") +"'" + "에 대한 "+ productDao.count()+"건 검색결과</mark> ");
 		}
-		
-//		if (map.get("product_name") != map.get("product_name")) {
-//			sb.append("<mark> "+ "'" + map.get("product_name") +"'" + "에 대한  검색결과가 없습니다."+"</mark> ");
-//		}
-		
 		if ("검색조건: ".equals(sb.toString())) {
 			sb.append("<mark>ALL</mark>");
 		}
-		
-			
-		
 		return sb.toString();
 	}
-	
 }
