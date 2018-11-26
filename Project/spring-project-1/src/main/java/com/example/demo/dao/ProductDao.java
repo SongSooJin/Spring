@@ -21,6 +21,7 @@ public interface ProductDao {
 	
 	public List<Product> search(Map<String, String> map);
 
+	public List<Product> productlist(Map<String, String> map);
 	
 }
 

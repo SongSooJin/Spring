@@ -6,6 +6,9 @@
 		<result property="product_id" column="product_id"/>
 		<result property="product_name" column="product_name"/>
 		<result property="product_price" column="product_price"/>
+		<result property="product_deliveryCharge" column="product_deliveryCharge"/>
+		<result property="product_detail" column="product_detail"/>
+		<result property="product_image" column="product_image"/>
 	</resultMap>
 	
 	<insert id="insert">
@@ -105,6 +108,20 @@
 				and product_price like #{patternproduct_price}
 			</if> -->
 		</trim>
+	</select>
+	
+	<select id="productlist" resultMap="productRowMapper">
+		select * from product 
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="product_name != null">
+				<bind name="patternproduct_name" value="'%' + _parameter.get('product_name') + '%'" />
+				product_name like #{patternproduct_name}
+			</if>
+		</trim>
+	</select>
+	
+	<select id="productlist2" resultMap="productRowMapper">
+		select * from product order by product_id asc
 	</select>
 
 </mapper>

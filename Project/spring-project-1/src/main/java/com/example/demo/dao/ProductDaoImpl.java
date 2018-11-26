@@ -92,4 +92,16 @@ public class ProductDaoImpl implements ProductDao {
 				"com.example.demo.dao.ProductDao.search", map);
 	}
 
+	@Override
+	public List<Product> productlist(Map<String, String> map) {
+		map.forEach((key, value) -> {
+			if ("".equals(value)) {
+				map.put(key, null);
+			}
+		});
+		
+		return session.selectList(
+				"com.example.demo.dao.ProductDao.productlist", map);
+	}
+
 }

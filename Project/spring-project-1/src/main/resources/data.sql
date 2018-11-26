@@ -1,36 +1,35 @@
-insert into product(product_name, product_price) values ('나이키','100000');
-insert into product(product_name, product_price) values ('나이키','5000');
-insert into product(product_name, product_price) values ('나이키','2525211');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('나이키','100000','ho1.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('나이키','5000','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('나이키','2525211','ho1.jpg','무료 배송','보기');
 
 
-insert into product(product_name, product_price) values ('청바지','18615');
-insert into product(product_name, product_price) values ('청바지','12122');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('청바지','18615','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('청바지','12122','ho1.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('청바지','12122','ho2.jpg','무료 배송','보기');
 
-insert into product(product_name, product_price) values ('유아옷','41812');
-insert into product(product_name, product_price) values ('유아옷','1851521');
-
-
-insert into product(product_name, product_price) values ('등갈비','51515215');
-insert into product(product_name, product_price) values ('등갈비','15311');
-insert into product(product_name, product_price) values ('등갈비','100000');
-
-insert into product(product_name, product_price) values ('에어프라이','100000');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('유아옷','41812','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('유아옷','1851521','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('유아옷','52156','ho2.jpg','무료 배송','보기');
 
 
-insert into product(product_name, product_price) values ('방콕','100000');
-insert into product(product_name, product_price) values ('방콕','262162');
-insert into product(product_name, product_price) values ('방콕','100000');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('등갈비','51515215','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('등갈비','15311','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('등갈비','100000','ho1.jpg','무료 배송','보기');
 
-insert into product(product_name, product_price) values ('미용실','100000');
-insert into product(product_name, product_price) values ('미용실','151581');
-insert into product(product_name, product_price) values ('미용실','100000');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('에어프라이','100000','ho1.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('에어프라이','3211','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('에어프라이','65156','ho2.jpg','무료 배송','보기');
 
 
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('방콕','6622','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('방콕','262162','ho1.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('방콕','432112','ho2.jpg','무료 배송','보기');
 
-INSERT INTO product(WRITER,TITLE,CONTENT,REG_DATE,HIT_COUNT) VALUES('W1', 'T1', 'C1', CURRENT_TIMESTAMP(), 0);
-INSERT INTO product(WRITER,TITLE,CONTENT,REG_DATE,HIT_COUNT) VALUES('W2', 'T2', 'C2', CURRENT_TIMESTAMP(), 0);
-INSERT INTO product(WRITER,TITLE,CONTENT,REG_DATE,HIT_COUNT) VALUES('W3', 'T3', 'C3', CURRENT_TIMESTAMP(), 0);
-INSERT INTO product(WRITER,TITLE,CONTENT,REG_DATE,HIT_COUNT) VALUES('W4', 'T4', 'C4', CURRENT_TIMESTAMP(), 0);
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('미용실','5511223','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('미용실','151581','ho2.jpg','무료 배송','보기');
+insert into product(product_name, product_price, product_image, product_deliveryCharge, product_detail) values ('미용실','100632','ho1.jpg','무료 배송','보기');
+
+
 
 
 

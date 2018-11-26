@@ -2,11 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<jsp:useBean id="productMgr" class="com.example.demo.product.ProductMgr" />
+<jsp:useBean id="product" class="com.example.demo.controller" />
 
 <%
 String no = request.getParameter("product_id");
-ProductBean bean = productMgr.getProduct(product_id);
+Product bean = productMgr.getProduct("product_id");
 %>
 
 <!DOCTYPE html>
@@ -19,21 +19,18 @@ ProductBean bean = productMgr.getProduct(product_id);
 </script>
 </head>
 <body>
-<h2>** 상품 상세보기 **</h2>
-<%@include file="guest_top.jsp" %>
-<form action="cartproc.jsp">
+
+<form action="">
 <table style="width: 90%">
 	<tr>
 		<td style="width: 20%">
-			<img title="<%=bean.getName() %>" src="../data/<%=bean.getImage() %>" width="150">
+			<img title="<%=bean.getproduct_name() %>" src="../data/<%=bean.getproduct_image() %>" width="150">
 		</td>
 		<td style="width: 50%;  vertical-align: top;">
 			<table style="width: 100%">
-				<tr><td>번호 : </td><td><%=bean.getNo() %></td></tr>
-				<tr><td>상품명 : </td><td><%=bean.getName() %></td></tr>
-				<tr><td>가격 : </td><td><%=bean.getPrice() %></td></tr>
-				<tr><td>등록일 : </td><td><%=bean.getSdate().substring(0,10) %></td></tr>
-				<tr><td>재고량 : </td><td><%=bean.getStock() %></td></tr>
+				<tr><td>번호 : </td><td><%=bean.getproduct_id() %></td></tr>
+				<tr><td>상품명 : </td><td><%=bean.getproduct_name() %></td></tr>
+				<tr><td>가격 : </td><td><%=bean.getproduct_price() %></td></tr>
 				<Tr>
 					<td>주문 수량</td>
 					<Td>
@@ -43,7 +40,7 @@ ProductBean bean = productMgr.getProduct(product_id);
 				<tr>
 					<td colspan="3" style="text-align: center;">
 						<Br>
-						<input type="hidden" name="product_no" value="<%=bean.getNo() %>">
+						<input type="hidden" name="product_no" value="<%=bean.getproduct_id() %>">
 						<input type="submit" value="장바구니에 담기">
 						<input type="button" value="이전화면으로" onclick="history.back()">
 					</td>
@@ -52,11 +49,11 @@ ProductBean bean = productMgr.getProduct(product_id);
 		</td>
 		<td style="width: 30%; vertical-align: top;">
 			<h4>상품 설명</h4 >
-			<%=bean.getDetail() %>
+			<%=bean.getproduct_detail() %>
 		</td>
 	</tr>
 </table>
 </form>
-<%@include file="guest_bottom.jsp" %>
+
 </body>
 </html>
