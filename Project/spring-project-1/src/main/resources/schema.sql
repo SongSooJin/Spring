@@ -7,5 +7,9 @@ create table product (
 	product_deliveryCharge varchar(40),
 	product_image varchar(40),
 	product_detail text,
-	product_seller varchar(40)
+	product_seller varchar(40),
+	product_size varchar(40),
+	product_color varchar(40),
+	product_count bigint,
+	hit_count bigint default 0
 );

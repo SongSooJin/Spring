@@ -1,6 +1,7 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,17 +78,12 @@
 	text-align:center;
 }
 
-#content thead tr th {
-	background-color:#7bf3ff;
-	font-size:20px;
-	text-align:center;
-}
-
-#content tbody tr td {
-	list-style:none;
-	padding-left:0px;
-	font-size:18px;                 
-
+.hi {
+	width:350px;
+	height:450px;
+	
+	float:left;
+	margin-left:150px;
 }
 
 #footer {
@@ -146,35 +142,58 @@
     <div id="content">
 			<p><h2>${conditions }</h2></p>
 			<br><br>
-			<table class="table table-hover">
-				<thead>
-        <tr>
-          <th>Product</th>
-					<th>Name</th>
-          <th>Price</th>
-          <th>Delivery Charge</th>
-          <th>Details</th>
-        </tr>
-			</thead>
 			
-			<tbody>
+			<div class="hi">
+
+			
+			<img src=image${product.product_image}>
+			
+			</div>	
+			<input  value="${product.product_name} ">
+			
+			<table class="table table-hover">
+	  	<thead>
+        <tr>
+          <th>${product.product_image}</th>
+
+     
+        </tr>
+			</thead>  
+			
+			<%-- <tbody>
 				<c:forEach var="r" items="${products}">
 					<tr>
-						<td><img src="image/getproduct_image()"></td>
+						<td><img src=image/${r.product_image}></td> 
 						<!--${r.product_image}  -->
 						<td>${r.product_name}</td>
 						<td>${r.product_price}</td>
 						<td>${r.product_deliveryCharge}</td>
 						<td>${r.product_deliveryCharge}</td>
 						
-						<%-- <td><a href="javascript:productdetail_guest'('<%=p.getproduct_id()%>')">보기</a></td> --%>
+						
 					<tr>
 				</c:forEach>
-				</tbody>
-				
+				</tbody> --%>
+
+			<%-- 	<tbody>
+						
+						
+				<c:forEach var="r" items="${products}">
+					<tr>
+						<td><img src=image/${r.product_image}></td> 
+						<!--${r.product_image}  -->
+						<td>${r.product_name}</td>
+						<td>${r.product_price}</td>
+						<td>${r.product_deliveryCharge}</td>
+						<td>${r.product_deliveryCharge}</td>
+						
+						
+					<tr>
+				</c:forEach>
+				</tbody> --%>
+			
 				</table>
-				<img src="../image/ho.jpg" alt="">
-				
+		
     </div>
 		
     <div id="footer">

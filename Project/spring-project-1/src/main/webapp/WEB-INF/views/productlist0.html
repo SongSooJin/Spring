@@ -86,7 +86,8 @@
 #content tbody tr td {
 	list-style:none;
 	padding-left:0px;
-	font-size:18px;                 
+	font-size:18px;
+	vertical-align: middle;                 
 
 }
 
@@ -114,6 +115,12 @@
 
 .footer3 {
   flex: 1;
+}
+
+img {
+	width:250px;
+	height:150px; 
+
 }
 
 </style>
@@ -153,25 +160,26 @@
 					<th>Name</th>
           <th>Price</th>
           <th>Delivery Charge</th>
-          <th>Details</th>
+          <th>Detail</th>
         </tr>
 			</thead>
 			
 			<tbody>
 				<c:forEach var="r" items="${products}">
 					<tr>
-						<td><img src="image/getproduct_image()"></td>
-						<!--${r.product_image}  -->
+						<td><img src=image/${r.product_image}></td> 
+						<%-- <td><img src="${r.product_image}"></td> --%>
 						<td>${r.product_name}</td>
 						<td>${r.product_price}</td>
 						<td>${r.product_deliveryCharge}</td>
-						<td>${r.product_deliveryCharge}</td>
+						<td><a href="<c:url value='/productlist2'/>">${r.product_detail}</a></td> 
+						<%-- <td><a href="javascript:productdetail_guest'('<%=p.getproduct_id()%>')">보기</a></td> --%>
 					<tr>
 				</c:forEach>
 				</tbody>
 				
 				</table>
-				<img src="../image/ho.jpg" alt="">
+				
 				
     </div>
 		

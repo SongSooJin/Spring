@@ -16,6 +16,8 @@ public class Product {
 	private String product_image;
 	private String product_detail;
 	private String product_deliveryCharge;
+	private int hit_count;
+	
 	
 	@Value("${image.location}")
 	private String image_location;

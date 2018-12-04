@@ -86,7 +86,8 @@
 #content tbody tr td {
 	list-style:none;
 	padding-left:0px;
-	font-size:18px;                 
+	font-size:18px;
+	vertical-align: middle;                 
 
 }
 
@@ -152,27 +153,31 @@ img {
     <div id="content">
 			<p><h2>${conditions }</h2></p>
 			<br><br>
+			
+			<c:if >
+			
+			</c:if>
+			
 			<table class="table table-hover">
 				<thead>
-        <tr>
-          <th>Product</th>
+					<tr>
+          			<th>Product</th>
 					<th>Name</th>
-          <th>Price</th>
-          <th>Delivery Charge</th>
-          <th>Detail</th>
+          			<th>Price</th>
+          			<th>Delivery Charge</th>
+       				<th>Detail</th>
         </tr>
 			</thead>
 			
 			<tbody>
-				<c:forEach var="r" items="${products}">
+				<c:forEach var="r" items="${result}">
 					<tr>
 						<td><img src=image/${r.product_image}></td> 
-						<%-- <td><img src="${r.product_image}"></td> --%>
 						<td>${r.product_name}</td>
 						<td>${r.product_price}</td>
 						<td>${r.product_deliveryCharge}</td>
-						<td><a href="<c:url value='/productlist2'/>">${r.product_detail}</a></td> 
-						<%-- <td><a href="javascript:productdetail_guest'('<%=p.getproduct_id()%>')">보기</a></td> --%>
+						<td><a href="<c:url value='/products/view/${r.product_id }'/>">${r.product_detail}</a></td> 
+
 					<tr>
 				</c:forEach>
 				</tbody>

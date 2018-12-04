@@ -46,7 +46,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
-	public List<Product> findAll() {
+	public List<Product> findAll(String product_name) {
 		return session.selectList(
 				"com.example.demo.dao.ProductDao.findAll");
 	}
@@ -73,24 +73,24 @@ public class ProductDaoImpl implements ProductDao {
 			"com.example.demo.dao.ProductDao.findByPageSizeUsingBind", map);
 	}
 	
-	@Override
-	public List<Product> search(Map<String, String> map) {
-		/*
-		 * 매퍼 XML의 <if> 태그에서 제대로 된 값의 상태를 체크하기 위한 처리작업이 필요하다.
-		 * 1. 빈 문자열을 null로 바꾼다. if 조건에서 null 값으로 비교할 수 있다.
-		 * 2. if 조건에서 null 값으로 비교하는 대신 빈 문자열을 대상으로 체크한다.
-		 */
-		
-		// #1 방식으로 사용하기 위한 처리작업을 수행한다.
-		map.forEach((key, value) -> {
-			if ("".equals(value)) {
-				map.put(key, null);
-			}
-		});
-		
-		return session.selectList(
-				"com.example.demo.dao.ProductDao.search", map);
-	}
+//	@Override
+//	public List<Product> search(Map<String, String> map) {
+//		/*
+//		 * 매퍼 XML의 <if> 태그에서 제대로 된 값의 상태를 체크하기 위한 처리작업이 필요하다.
+//		 * 1. 빈 문자열을 null로 바꾼다. if 조건에서 null 값으로 비교할 수 있다.
+//		 * 2. if 조건에서 null 값으로 비교하는 대신 빈 문자열을 대상으로 체크한다.
+//		 */
+//		
+//		// #1 방식으로 사용하기 위한 처리작업을 수행한다.
+//		map.forEach((key, value) -> {
+//			if ("".equals(value)) {
+//				map.put(key, null);
+//			}
+//		});
+//		
+//		return session.selectList(
+//				"com.example.demo.dao.ProductDao.search", map);
+//	}
 
 	@Override
 	public List<Product> productlist(Map<String, String> map) {
@@ -102,6 +102,18 @@ public class ProductDaoImpl implements ProductDao {
 		
 		return session.selectList(
 				"com.example.demo.dao.ProductDao.productlist", map);
+	}
+
+	@Override
+	public Product selectById(int product_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int increment(int product_id) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

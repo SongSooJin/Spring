@@ -9,6 +9,7 @@
 		<result property="product_deliveryCharge" column="product_deliveryCharge"/>
 		<result property="product_detail" column="product_detail"/>
 		<result property="product_image" column="product_image"/>
+		<result property="hit_count" column="hit_count"/>
 	</resultMap>
 	
 	<insert id="insert">
@@ -29,8 +30,8 @@
 		delete from product where product_id=#{product_id}
 	</delete>
 	
-	<select id="findAll" resultMap="productRowMapper">
-		select * from product order by product_id asc
+	<select id="findAll" parameterType="String" resultMap="productRowMapper">
+		select * from product order by #{product_name} asc
 	</select>
 	
 	<select id="count" resultType="int">
@@ -96,19 +97,6 @@
 		
 		CONCAT('%',#{ename},'%') 대신 bind 태그를 사용할 수 있다.
 	 -->
-	<select id="search" resultMap="productRowMapper">
-		select * from product 
-		<trim prefix="WHERE" prefixOverrides="AND|OR">
-			<if test="product_name != null">
-				<bind name="patternproduct_name" value="'%' + _parameter.get('product_name') + '%'" />
-				product_name like #{patternproduct_name}
-			</if>
-			<!-- <if test="job != null">
-				<bind name="patternproduct_price" value="'%' + _parameter.get('product_price') + '%'" />
-				and product_price like #{patternproduct_price}
-			</if> -->
-		</trim>
-	</select>
 	
 	<select id="productlist" resultMap="productRowMapper">
 		select * from product 
@@ -118,10 +106,23 @@
 				product_name like #{patternproduct_name}
 			</if>
 		</trim>
-	</select>
+	</select> 
 	
 	<select id="productlist2" resultMap="productRowMapper">
-		select * from product order by product_id asc
+		select * from product 
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="product_name != null">
+				<bind name="patternproduct_name" value="'%' + _parameter.get('product_name') + '%'" />
+				product_name like #{patternproduct_name}
+			</if>
+		</trim>
 	</select>
-
+	
+	<select id="selectById" parameterType="int" resultMap="productRowMapper">
+		SELECT * FROM product WHERE product_id=#{product_id}
+	</select>
+	
+	<update id="increment" parameterType="int">
+		UPDATE product SET hit_count=hit_count+1 WHERE product_id=#{product_id}
+	</update>
 </mapper>
