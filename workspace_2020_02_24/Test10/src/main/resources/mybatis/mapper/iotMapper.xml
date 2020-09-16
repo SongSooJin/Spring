@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="iot">
+
+ 	<select id="list" resultType="BoardDTO">
+ 		SELECT *
+ 		FROM boardview
+ 	</select>
+ 	
+ 	<insert id="writeAction" parameterType="BoardDTO">
+		INSERT INTO board (board_title, board_content, login_no, board_file)
+		VALUES (#{board_title }, #{board_content }, 
+		(SELECT login_no FROM login WHERE login_name = #{login_name } ),#{board_file} )
+	</insert>
+	
+	<select id="login" parameterType="LoginDTO" resultType="String">
+		SELECT login_name
+		FROM login WHERE login_id = #{id } AND login_pw = #{pw }
+	</select>
+	
+	<select id="detail" parameterType="BoardDTO" resultType="BoardDTO">
+		SELECT board_no, board_title, board_content, login_name, 
+				board_date, board_count, board_file, comment
+		FROM boardview WHERE board_no = #{board_no}
+		<if test="login_name != null"> AND login_name = #{login_name }</if>
+	</select>
+	
+	<delete id="delete" parameterType="BoardDTO">
+		DELETE FROM board
+		WHERE board_no = #{board_no } AND 
+		login_no = (SELECT login_no FROM login WHERE login_name = #{login_name })
+	</delete>
+	
+	<select id="update" parameterType="BoardDTO" resultType="BoardDTO">
+		SELECT board_no, board_title, board_content, login_name, board_date, board_count
+		FROM boardview
+		WHERE board_no = #{board_no } AND login_name = #{login_name }
+	</select>
+	
+	<update id="updateAction" parameterType="BoardDTO">
+		UPDATE board SET board_title = #{board_title}, 
+						board_content = #{board_content}
+		WHERE board_no = #{board_no } AND 
+		login_no = (SELECT login_no FROM login WHERE login_name = #{login_name })				
+	</update>
+	
+	<insert id="comment" parameterType="CommentDTO">
+		INSERT INTO comment (bno, lno, ccomment)
+		VALUES (#{board_no }, 
+		(SELECT login_no FROM login WHERE login_name = #{login_name}), #{comment })
+	</insert>
+
+	<select id="commentList" parameterType="Integer" resultType="CommentDTO">
+		SELECT cno, bno as board_no, login_name, ccomment as comment, cdate FROM commentview
+		WHERE bno = #{board_no }
+	</select>
+	
+	<delete id="commentDelete" parameterType="CommentDTO">
+		DELETE FROM comment 
+		WHERE cno = ${cno} 
+		AND lno = (SELECT login_no FROM login WHERE login_name = #{login_name })
+	</delete>
+	
+	<select id="commentEdit" parameterType="CommentDTO" resultType="CommentDTO">
+		SELECT cno, bno as board_no, ccomment as comment, cdate 
+		FROM comment WHERE bno = #{board_no } AND cno = #{cno } AND lno = (SELECT login_no FROM login WHERE login_name = #{login_name })
+	</select>
+	
+	<update id="commentEditAction" parameterType="CommentDTO">
+		UPDATE comment SET ccomment = #{comment }
+		WHERE bno = #{board_no } AND cno = #{cno } AND
+		 lno = (SELECT login_no FROM login WHERE login_name = #{login_name })
+	</update>
+	
+	<select id="checkID" parameterType="String" resultType="Integer">
+		SELECT count(*) FROM login WHERE login_id = #{id }
+	</select>
+	
+	<insert id="joinAction" parameterType="LoginDTO">
+		INSERT INTO login (login_id, login_name, login_pw)
+		VALUES (#{id}, #{name}, #{pw})
+	</insert>
+ </mapper>

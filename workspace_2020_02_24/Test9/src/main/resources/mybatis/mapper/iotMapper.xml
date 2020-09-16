@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="iot">
+
+ 	<select id="list" resultType="BoardDTO">
+ 		SELECT *
+ 		FROM boardview
+ 	</select>
+ 	
+ 	<insert id="writeAction" parameterType="BoardDTO">
+		INSERT INTO board (board_title, board_content, login_no)
+		VALUES (#{board_title }, #{board_content }, (SELECT login_no FROM login WHERE login_name = #{login_name } ) )
+	</insert>
+	
+	<select id="login" parameterType="LoginDTO" resultType="String">
+		SELECT login_name
+		FROM login WHERE login_id = #{id } AND login_pw = #{pw }
+	</select>
+	
+	<select id="detail" parameterType="BoardDTO" resultType="BoardDTO">
+		SELECT board_no, board_title, board_content, login_name, 
+				board_date, board_count 
+		FROM boardview WHERE board_no = #{board_no}
+	</select>
+	
+ </mapper>

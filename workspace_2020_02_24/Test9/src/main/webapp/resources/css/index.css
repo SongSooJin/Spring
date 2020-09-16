@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	
+}
+
+#loginbox {
+	width: 700px;
+	height: 700px;
+	background-color: orange;
+	margin: 0 auto;
+	margin-top: 80px;
+	padding: 20px;
+	text-align: center;
+	 
+}
+
+#loginbox input {
+	width: 60%;
+	height: 25px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 14pxt
+}
+
+#loginbox button {
+	width: 80%;
+	height: 35px;
+	font-weight: bold;
+	background-color: navy;
+	border: none;
+	color: white;
+	font-size: 24pxt
+}

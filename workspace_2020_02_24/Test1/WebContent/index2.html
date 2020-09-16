@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		html의 확장형태 -> xml
+		xml은 사용자가 직접 태그 작성하여 사용가능
+		스프링 설정할때 사용
+		
+		특수문자<br>
+		< -> &lt; 이표시는 문단의 시작..<br>
+		> -> &gt; <br>
+		& -> &amp;<br>
+		" -> &quot;<br>
+		스페이스바는 한번은 된다. 두번을 할 경우 &nbsp; &nbsp; 를쓴다.<br>
+		등은 특수문자는 바꿔서 사용한다.<br>
+		&hearts; ->  하트<br>
+		&하고 컨트롤 + 스페이스로 특수문자 확인해서 찍어주세요.<br>
+		
+		<hr>
+		
+		링크<br>
+		다른 페이지로 이동 a태그<br>
+		<a href="">화면에 보일 내용</a>
+		<br>
+		<a href="http://www.naver.com">네이버</a>로 이동합니다. (절대경로)<br>
+		<a href="./main.html">main</a>으로 이동<br>
+		<a href="#top">상위로</a><br>
+		절대경로 상대경로<br>
+		
+		<hr>
+		
+		그림파일<br>
+		img태그는 여는 태그만 있다. <br>
+		<img alt="그림이 안 뜰때 보여줄 글" src="그림파일 경로"> <br>
+		<img alt="배경화면" src="배경.jpg"> 그림파일 경로가 정확해야 합니다. <br>
+		<img alt="외부 연결" src="이미지 주소 복사하여 붙여넣기"> <br>
+		<img alt="" src="https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/TRE/image/jSbbIDabdmD5S54u1gX-1W64ok0"> <br>
+		jpg, png, gif, bmp .... <br>
+		<a href="./main.html">메인으로</a>
+		404 파일이 없습니다. 
+		500 자바 로직 에러 
+		
+		<hr>
+
+	<h1>표 만들기</h1>
+	table 태그 <br>
+	<table border="1" style="width: 200px; height: 200px;">
+		<tr>
+			<td rowspan="2">1</td>
+			<td>2</td>	
+			<td colspan="2">3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td colspan="2">8</td>
+			<td>9</td>
+		</tr>
+	</table>
+	
+	<hr>
+	
+	<table border="1" style="width: 200px; height: 200px;">
+		<tr>
+			<td colspan="2">1</td>
+			<!-- <td>2</td> -->
+			<td rowspan="2">3</td>
+		</tr>
+		<tr>
+			<td rowspan="2">4</td>
+			<td>5</td>
+			<!-- <td>6</td> -->
+		</tr>
+		<tr>
+			<!-- <td>7</td> -->
+			<td colspan="2">8</td>
+			<!-- <td>9</td> -->
+		</tr>
+	</table>
+	
+	<hr>
+	
+	게시판 모양 만들기<br>
+	<table border="1" style="width: 500px; height: 800px;">
+		<thead> 테이블 헤드부분
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>글쓴이</th>
+				<th>날짜</th>
+				<th>조회수</th>
+			</tr>
+		</thead>
+		
+		<tbody>	테이블 바디부분
+			<tr>
+				<td>10</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>10번 글 입니다.</td>
+				<td>운영자</td>
+				<td>2020-02-05</td>
+				<td>1</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<hr>
+	미디어태그 = 음악, 영상 <br>
+	<audio src=""></audio>
+	<video src="./ch.mp4" autoplay="autoplay" controls="controls">
+	브라우저가 해당 파일을 지원하지 않는 경우 뜰 글
+	</video>
+	
+	<video autoplay="autoplay" controls="controls">
+		<source src="파일명1.mp4" type="video/mp4">
+		<source src="파일명2.ogg" type="video/ogg">
+	</video>
+	
+	<hr>
+	폼태그 
+	<form action="찾아갈 곳" method="전송방식(get/post)">
+		보낼 내용들..<br>
+		get 공개방식 = 주소표시줄에 해당 내용이 남습니다. = 신문기사 <br>
+		post 비공개 방식 = 주소표시줄에 남지 않습니다. 숨김 전송 = 로그인 = 보안이 필요할때 <br>
+	</form>
+	<br>
+	
+	<form action="input.html" method="post" name="frm">
+		<input type="text" name="id" id="id" class="">
+		<input type="password" name="pw"> <!-- pw라는 이름으로 전송 --> 
+		
+		<button type="submit">로그인 하기</button>
+		<input type="submit" value="인풋 로그인하기">
+		
+		<button type="reset">초기화 하기</button>
+		<input type="reset" value="인풋 리셋버튼">
+	</form>
+	
+	데이터베이스
+	
+	<hr>
+	이렇게도 할 수 있습니다.<br><br><br>
+	
+	<fieldset>
+		<legend>로그인 하기</legend>
+		id : <input type="text"> <br>
+		pw : <input type="password"> <br>
+		<button type="submit">로그인하기</button>
+	</fieldset>
+	
+	<br><br><br>
+	
+	라디오 버튼<br>
+		<input type="radio" name="nation" value="kor">한국<br>	
+		<input type="radio" name="nation" value="eu">미국<br>	
+	
+	<br><br><br>
+	
+	체크 박스<br>
+		<input type="checkbox" name="loc" value="1">서울
+		<input type="checkbox" name="loc" value="2">경기
+		<input type="checkbox" name="loc" value="3">충남
+		<input type="checkbox" name="loc" value="4">충북
+		<input type="checkbox" name="loc" value="5">제주<br>
+	
+	<br><br><br>
+	
+	입력<br>
+		<input type="text">
+		<input type="password">
+		<input type="number" min="10" max="100" step="3" value="20">
+		<input type="email">
+		<input type="range" min="1" max="100" step="3">
+		<input type="date"> <!-- 년도-월-일 -->
+		<input type="datetime"> <br> <!-- 날짜와 시간선택 -->
+		<input type="file"> 모든파일 선택<br>
+		<input type="file" accept="image/*"> 그림파일만 <br>
+	<hr>
+	
+	<br><br><br>
+	
+	select - 생년원일 주로사용 <br>
+		<select name="check">
+			<option value="1">과일을 선택하세요.</option>
+			<option value="2">사과</option>
+			<option value="3" selected="selected">딸기</option>
+			<option value="4">포도</option>
+			<option value="5">오렌지</option>
+		</select>
+	
+	<hr>
+	
+	<br><br><br>
+	
+	text area <br>
+		<textarea rows="10" cols="50" name="">여기에 입력해 주세요.</textarea>	
+	
+	<hr>
+	
+	<br><br><br>
+	
+	기타
+		<pre>
+		가나다     마바사   아자차카        타파하    
+		안녕하세요 이 태그는 
+		엔터도 처리가 됩니다. ㅎㅎ 
+		또한 들여쓰기도 적용 됩니당 
+		</pre>
+		
+		<hr>
+		
+	<br><br><br>
+		
+		<태그 style="속성:값; 속성:값;"></태그>
+	span
+		하나의 문장이 있을 때 여기만 <span style="color: pink; font-size: 20pt;  font-weight: bold; ">강조</span> 하겠습니다.
+		
+		<hr>
+		
+	<br><br><br>	
+		
+	목록<br>
+		1. 순서가 있는 목록 
+			<ol type="A" start="3" reversed="reversed">  <!-- type의 기본은 1, a, A, i, I -->
+				<li>목록</li>
+				<li>목록</li>
+				<li>목록</li>
+				<li>목록</li>
+			</ol>
+		
+		2. 순서가 없는 목록 = menu
+			<ul type="circle"> <!-- type의 기본은 disc, square, circle  -->
+				<li>목록</li>
+				<li>목록</li>
+				<li>목록</li>
+				<li>목록</li>
+			</ul>
+			<hr>
+		3. 정의 목록
+			<dl>
+				<dt>정의할 단어</dt>
+				<dd>단어의 설명</dd>
+			</dl>
+			<hr>
+			<ul>
+				<li>식물
+					<ul type="circle">
+						<li>소나무</li>
+						<li>배나무</li>
+						<li>잦나무</li>
+						<li>밤나무</li>
+					</ul>
+					
+				</li>
+					
+				<li>동물
+					<ol type="I">
+						<li>호랑이</li>
+						<li>사자</li>
+						<li>치타</li>
+						<li>표범</li>
+					</ol>
+				</li>
+			</ul>
+			
+</body>
+</html>

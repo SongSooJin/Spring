@@ -1,0 +1,34 @@
+@charset "UTF-8";
+body {
+	background-color: pink;
+}
+
+table {
+	width: 100%;
+	height: auto;
+/* 	border: 1px solid; */
+	border-collapse: collapse;
+}
+
+td {
+	border-bottom: 1px solid;
+	text-align: center;
+}
+
+tr {
+	height: 30px;
+}
+
+#title {
+	text-align: left;
+}
+
+tr:nth-child(odd) {
+	background-color: #408080;
+	/* 홀수 위치 변경 */
+}
+
+tr:nth-child(even) {
+	background-color: #ff8000;
+	/* 짝수 위치 변경 */
+}

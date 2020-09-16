@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+#container{
+	height: auto;
+	width: 100%;
+}
+#mainer{
+	margin: 0 auto;
+	width: 800px;
+	height: auto;	
+}
+#comment{
+	width: 800px;
+	height: 100px;
+}
+#commenttextarea{
+	height: 100px;
+	width: 700px;
+	float: left;
+}
+
+#commentbutton{
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+
+#commenttextarea textarea, #commentbutton button{
+	margin:0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+}
+
+#commentbox{
+	min-height: 70px;
+	max-height: auto;
+	width: 800px;
+}
+#commentid{
+	width: 50%;
+	height: 25px;
+	float: left;
+	background-color: #c0c0c0;
+	padding:0 5px;
+	box-sizing: border-box;
+}
+#commentdate{
+	height: 25px;
+	width: 50%;
+	background-color: #c0c0c0;
+	float: right;
+	text-align: right;
+	padding:0 5px;
+	box-sizing: border-box; 
+}
+#commentc{
+	min-height:50px;
+	max-height:auto;
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}

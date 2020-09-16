@@ -1,0 +1,56 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: pink;
+	
+}
+
+#divbox {
+	width: 300px;
+	height: 100px;
+	background-color: blue;
+}
+
+#divbox2 {
+	width: 300px;
+	height: 100px;
+	background-color: green;
+	position: relative; /* 지금있는 위치에서 간격조절 */
+	top: 50px;
+	left: 50px;
+}
+
+#divbox3 {
+	
+	width: 300px;
+	height: 100px;
+	background-color: orange;
+	position: absolute; /* 맨앞서부터 간격 조절 */
+	top: 200px;
+	left: 300px;
+	
+}
+
+#divbox4 {
+	width: 300px;
+	height: 100px;
+	background-color: red;
+	position: fixed;
+	top: 25px;
+	right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
